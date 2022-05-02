@@ -1,5 +1,7 @@
 # KTU-Classwise-SGPA-Calculator
 
+This Script helps KTU students to calculate classwise SGPA and analyze class wise ranking reports at ease. It runs on a simple python program with the help of a CSV file which stores raw data. Ranking reports and individual SGPA can be calculated by uncommenting the desired code snippet
+
 ## Python Script Showing class-wise Ranking.
 <img align="left" src="https://github.com/adi-code22/KTU-Classwise-SGPA-Calculator/blob/main/ranking.PNG?raw=true" width="1000"/>
 
