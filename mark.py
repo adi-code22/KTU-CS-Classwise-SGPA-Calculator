@@ -40,13 +40,16 @@ def calculate(x):
 
 with open(filename, 'r') as csvfile:
     datareader = csv.reader(csvfile)
+    dict = {}
     for row in datareader:
         sgpa = 0
         w = 0
+        # print("\n")
         for i in row:
             temp = 0
             if w == 0:
-                print(i)
+                # print(i)
+                new = i
                 w += 1
             else:
                 if i[0: 7] == " HUT200":
@@ -83,6 +86,18 @@ with open(filename, 'r') as csvfile:
                     sgpa += temp
                 else:
                     pass
-                    #print("Returned error due to bad subject code read from input")
+                    # print("Returned error due to bad subject code read from input")
 
-        print((sgpa/220)*10);
+        # print((sgpa / 220) * 10);
+        dict[new] = (sgpa / 220) * 10
+    j = 0
+    store = 0
+    for i in sorted(dict.items(), key=lambda kv: (kv[1], kv[0]), reverse=True):
+        k = 0
+        for l in i:
+            if k == 1:
+                if l != store:
+                    j += 1
+                store = l
+            k += 1
+        print("Rank",j, "-->", i, "\n")
