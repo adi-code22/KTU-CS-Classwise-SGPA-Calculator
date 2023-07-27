@@ -52,41 +52,34 @@ with open(filename, 'r') as csvfile:
                 new = i
                 w += 1
             else:
-                if i[0: 7] == " MCN301":
-                    pass
-                elif i[0: 7] == " CST301":
-                    temp += calculate(i[8: 10])
-                    temp *= 4
-                    sgpa += temp
-                elif i[0: 7] == " CST303":
-                    temp += calculate(i[8: 10])
-                    temp *= 4
-                    sgpa += temp
-                elif i[0: 7] == " CST305":
-                    temp += calculate(i[8: 10])
-                    temp *= 4
-                    sgpa += temp
-                elif i[0: 7] == " CST307":
-                    temp += calculate(i[8: 10])
-                    temp *= 4
-                    sgpa += temp
-                elif i[0: 7] == " CST309":
+                if i[0: 7] == " CST464":
                     temp += calculate(i[8: 10])
                     temp *= 3
                     sgpa += temp
-                elif i[0: 7] == " CSL331":
+                elif i[0: 7] == " CST448":
                     temp += calculate(i[8: 10])
-                    temp *= 2
+                    temp *= 3
                     sgpa += temp
-                elif i[0: 7] == " CSL333":
+                elif i[0: 7] == " CST476":
                     temp += calculate(i[8: 10])
-                    temp *= 2
+                    temp *= 3
+                    sgpa += temp
+                elif i[0: 7] == " CST402":
+                    temp += calculate(i[8: 10])
+                    temp *= 3
+                    sgpa += temp
+                elif i[0: 7] == " CST404":
+                    temp += calculate(i[8: 10])
+                    temp *= 1
+                    sgpa += temp
+                elif i[0: 7] == " CSD416":
+                    temp += calculate(i[8: 10])
+                    temp *= 4
                     sgpa += temp
                 else:
                     print("Returned error due to bad subject code read from input")
 
-        # print((sgpa / 220) * 10);
-        dict[new] = (sgpa / 230) * 10
+        dict[new] = (sgpa / 170) * 10
     j = 0
     store = 0
     for i in sorted(dict.items(), key=lambda kv: (kv[1], kv[0]), reverse=True):
